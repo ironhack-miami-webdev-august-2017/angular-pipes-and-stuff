@@ -1,0 +1,11 @@
+<h3> The Many Faces of Dwayne "The Rock" Johnson </h3>
+
+<input type="search" placeholder="turtle"
+    [(ngModel)]="mySearchTerm">
+
+<ul>
+  <li *ngFor="let oneRock of (theRocks | searchByName:mySearchTerm)">
+    <h4> {{ oneRock.name }} </h4>
+    <img [src]="oneRock.imageUrl">
+  </li>
+</ul>
