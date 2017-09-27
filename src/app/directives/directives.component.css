@@ -1,0 +1,19 @@
+h2 {
+  border: 3px solid black;
+}
+
+.bigFat {
+  font-size: 75px;
+  padding: 20px 30px;
+  border-width: 10px;
+}
+
+.comic {
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.rainbow {
+  background-color: darksalmon;
+  color: rebeccapurple;
+  border-color: chartreuse;
+}

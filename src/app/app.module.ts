@@ -7,6 +7,7 @@ import { CryptoCurrencyComponent } from './crypto-currency/crypto-currency.compo
 import { EmojifyPipe } from './pipes/emojify.pipe';
 import { RockSearchComponent } from './rock-search/rock-search.component';
 import { SearchByNamePipe } from './pipes/search-by-name.pipe';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SearchByNamePipe } from './pipes/search-by-name.pipe';
     CryptoCurrencyComponent,
     EmojifyPipe,
     RockSearchComponent,
-    SearchByNamePipe
+    SearchByNamePipe,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,

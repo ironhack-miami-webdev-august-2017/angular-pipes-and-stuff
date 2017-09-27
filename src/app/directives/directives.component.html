@@ -1,0 +1,70 @@
+<div [ngStyle]="{ color: textColorValue }">
+
+  <h2 [ngClass]="{ bigFat: heading.isBig, comic: heading.isComic, rainbow: heading.isColorful }">
+    Directives!
+  </h2>
+
+  <h3> *ngClass </h3>
+
+  <button (click)="sizeChange($event)"> Toggle Size </button>
+  <button (click)="fontChange($event)"> Toggle Font </button>
+  <button (click)="colorChange($event)"> Toggle Color </button>
+
+
+  <h3> *ngIf </h3>
+
+  <label for="number-input"> Enter a Number </label>
+  <input  id="number-input" type="number" placeholder="9999"
+      name="userNumber" [(ngModel)]="user.number">
+
+  <p *ngIf="user.number % 10 === 0">
+    That number is a multiple of 10.
+  </p>
+
+  <!-- You can use the opposite condition for an "else" -->
+  <p *ngIf="user.number % 10 > 0">
+    That number is NOT a multiple of 10. Hate it.
+  </p>
+
+  <p *ngIf="user.number % 10 === 0; else myElseTag">
+    That number is a multiple of 10.
+  </p>
+
+  <ng-template #myElseTag>
+    <br>
+    That number is NOT a multiple of 10. Hate it.
+  </ng-template>
+
+
+  <h3> *ngFor </h3>
+
+  <ul>
+    <li *ngFor="let oneAnimal of animals, let x = index">
+      <h4> {{ oneAnimal.name }} </h4>
+      <p> Category {{ oneAnimal.category }} </p>
+      <span> (Position {{ x }}) </span>
+    </li>
+  </ul>
+
+
+  <h3> *ngSwitch </h3>
+
+  <select [(ngModel)]="user.travelSelection">
+    <option value="">Choose a destination...</option>
+    <option value="cart"> Cartagena </option>
+    <option value="thai"> Thailand </option>
+    <option value="haw"> Hawaii </option>
+    <option value="cost"> Costa Rica </option>
+    <option value="aus"> Australia </option>
+    <option value="tok"> Tokyo </option>
+  </select>
+
+  <div [ngSwitch]="user.travelSelection">
+    <p *ngSwitchCase="'tok'"> 🏯 Konnichiwa 🇯🇵 </p>
+    <p *ngSwitchCase="'thai'"> kee mao 🇹🇭 </p>
+    <p *ngSwitchCase="'haw'"> Aloha 🍍 </p>
+    <p *ngSwitchCase="'aus'"> Shrimp on the bahbie, mate. 🍤 </p>
+    <p *ngSwitchDefault> Cool, I guess... </p>
+  </div>
+
+</div>
